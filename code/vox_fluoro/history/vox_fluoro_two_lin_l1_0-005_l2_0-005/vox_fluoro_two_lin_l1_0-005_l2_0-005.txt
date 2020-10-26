@@ -1,0 +1,139 @@
+WARNING: Logging before flag parsing goes to stderr.
+W0905 09:37:08.854653 139865383167808 deprecation.py:506]
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+W0905 09:37:09.175367 139865383167808 deprecation.py:323] 
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+2019-09-05 09:51:02.255727: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-09-05 09:51:04.875767: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2599825000 Hz
+2019-09-05 09:51:05.009519: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55a586bef580 executing computations on platform Host. Devices:
+2019-09-05 09:51:05.009613: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2019-09-05 09:51:06.894191: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2019-09-05 09:51:07.257294: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:02:00.0
+2019-09-05 09:51:07.329304: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.9.0
+2019-09-05 09:51:07.554022: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.9.0
+2019-09-05 09:51:07.579612: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.9.0
+2019-09-05 09:51:07.635074: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.9.0
+2019-09-05 09:51:07.897090: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.9.0
+2019-09-05 09:51:08.033077: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.9.0
+2019-09-05 09:51:08.609102: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2019-09-05 09:51:08.655972: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2019-09-05 09:51:08.656218: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.9.0
+2019-09-05 09:51:09.281818: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-05 09:51:09.281903: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2019-09-05 09:51:09.281952: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2019-09-05 09:51:09.291503: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15188 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:02:00.0, compute capability: 6.0)
+2019-09-05 09:51:09.297600: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55a543e4dcb0 executing computations on platform CUDA. Devices:
+2019-09-05 09:51:09.297658: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla P100-PCIE-16GB, Compute Capability 6.0
+2019-09-05 09:51:22.759681: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.9.0
+2019-09-05 09:51:24.780695: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+~/fluoro/code/jupyt/vox_fluoro/vox_fluoro_two_lin_l1_0-005_l2_0-005
+
+
+completely loaded...
+
+
+Train on 4074 samples, validate on 1018 samples
+Epoch 1/50
+4074/4074 - 792s - loss: 1014.5319 - cust_mean_squared_error_var: 3.7738 - val_loss: 795.9963 - val_cust_mean_squared_error_var: 3.6012
+Epoch 2/50
+4074/4074 - 776s - loss: 671.6834 - cust_mean_squared_error_var: 3.4540 - val_loss: 528.1594 - val_cust_mean_squared_error_var: 3.3842
+Epoch 3/50
+4074/4074 - 772s - loss: 583.8575 - cust_mean_squared_error_var: 3.0579 - val_loss: 566.5364 - val_cust_mean_squared_error_var: 2.7094
+Epoch 4/50
+4074/4074 - 770s - loss: 546.0180 - cust_mean_squared_error_var: 2.0296 - val_loss: 497.2644 - val_cust_mean_squared_error_var: 1.6035
+Epoch 5/50
+4074/4074 - 761s - loss: 558.1592 - cust_mean_squared_error_var: 1.4424 - val_loss: 611.4205 - val_cust_mean_squared_error_var: 1.4338
+Epoch 6/50
+4074/4074 - 774s - loss: 554.6406 - cust_mean_squared_error_var: 1.1778 - val_loss: 568.1735 - val_cust_mean_squared_error_var: 1.0802
+Epoch 7/50
+4074/4074 - 765s - loss: 563.2714 - cust_mean_squared_error_var: 1.0346 - val_loss: 470.5301 - val_cust_mean_squared_error_var: 0.9787
+Epoch 8/50
+4074/4074 - 767s - loss: 574.6470 - cust_mean_squared_error_var: 0.9525 - val_loss: 523.1096 - val_cust_mean_squared_error_var: 0.8986
+Epoch 9/50
+4074/4074 - 766s - loss: 577.8134 - cust_mean_squared_error_var: 0.8991 - val_loss: 711.6829 - val_cust_mean_squared_error_var: 0.8148
+Epoch 10/50
+4074/4074 - 771s - loss: 603.6664 - cust_mean_squared_error_var: 0.8606 - val_loss: 706.0010 - val_cust_mean_squared_error_var: 0.8887
+Epoch 11/50
+4074/4074 - 766s - loss: 601.8611 - cust_mean_squared_error_var: 0.8274 - val_loss: 496.4160 - val_cust_mean_squared_error_var: 0.8343
+Epoch 12/50
+4074/4074 - 771s - loss: 1032.2066 - cust_mean_squared_error_var: 3.7290 - val_loss: 584.7450 - val_cust_mean_squared_error_var: 1.0908
+Epoch 13/50
+4074/4074 - 765s - loss: 567.9352 - cust_mean_squared_error_var: 1.0375 - val_loss: 435.8417 - val_cust_mean_squared_error_var: 0.8786
+Epoch 14/50
+4074/4074 - 777s - loss: 576.9176 - cust_mean_squared_error_var: 0.8768 - val_loss: 634.2783 - val_cust_mean_squared_error_var: 0.8392
+Epoch 15/50
+4074/4074 - 826s - loss: 568.1026 - cust_mean_squared_error_var: 0.8231 - val_loss: 527.4040 - val_cust_mean_squared_error_var: 0.7926
+Epoch 16/50
+4074/4074 - 917s - loss: 572.5237 - cust_mean_squared_error_var: 0.8057 - val_loss: 485.0247 - val_cust_mean_squared_error_var: 0.8071
+Epoch 17/50
+4074/4074 - 869s - loss: 583.0799 - cust_mean_squared_error_var: 0.7966 - val_loss: 586.8196 - val_cust_mean_squared_error_var: 0.7739
+Epoch 18/50
+4074/4074 - 870s - loss: 577.0756 - cust_mean_squared_error_var: 0.7800 - val_loss: 580.6587 - val_cust_mean_squared_error_var: 0.7881
+Epoch 19/50
+4074/4074 - 860s - loss: 582.4147 - cust_mean_squared_error_var: 0.7682 - val_loss: 578.5706 - val_cust_mean_squared_error_var: 0.7515
+Epoch 20/50
+4074/4074 - 868s - loss: 558.5233 - cust_mean_squared_error_var: 0.7635 - val_loss: 524.4356 - val_cust_mean_squared_error_var: 0.7099
+Epoch 21/50
+4074/4074 - 868s - loss: 583.1923 - cust_mean_squared_error_var: 0.7434 - val_loss: 692.0343 - val_cust_mean_squared_error_var: 0.7191
+Epoch 22/50
+4074/4074 - 876s - loss: 567.3241 - cust_mean_squared_error_var: 0.7323 - val_loss: 521.4901 - val_cust_mean_squared_error_var: 0.7385
+Epoch 23/50
+4074/4074 - 875s - loss: 572.3748 - cust_mean_squared_error_var: 0.7166 - val_loss: 576.5911 - val_cust_mean_squared_error_var: 0.7310
+Epoch 24/50
+4074/4074 - 843s - loss: 557.8273 - cust_mean_squared_error_var: 0.7049 - val_loss: 676.2328 - val_cust_mean_squared_error_var: 0.6835
+Epoch 25/50
+4074/4074 - 881s - loss: 583.8906 - cust_mean_squared_error_var: 0.6983 - val_loss: 553.8478 - val_cust_mean_squared_error_var: 0.6801
+Epoch 26/50
+4074/4074 - 969s - loss: 577.0821 - cust_mean_squared_error_var: 0.6822 - val_loss: 675.0726 - val_cust_mean_squared_error_var: 0.6486
+Epoch 27/50
+4074/4074 - 967s - loss: 591.8208 - cust_mean_squared_error_var: 0.6743 - val_loss: 554.4705 - val_cust_mean_squared_error_var: 0.6892
+Epoch 28/50
+4074/4074 - 968s - loss: 568.1442 - cust_mean_squared_error_var: 0.6661 - val_loss: 703.4780 - val_cust_mean_squared_error_var: 0.6277
+Epoch 29/50
+4074/4074 - 972s - loss: 565.0102 - cust_mean_squared_error_var: 0.6615 - val_loss: 580.5487 - val_cust_mean_squared_error_var: 0.6697
+Epoch 30/50
+4074/4074 - 976s - loss: 604.5943 - cust_mean_squared_error_var: 1.2017 - val_loss: 565.8450 - val_cust_mean_squared_error_var: 1.0212
+Epoch 31/50
+4074/4074 - 941s - loss: 582.0760 - cust_mean_squared_error_var: 0.8374 - val_loss: 591.4099 - val_cust_mean_squared_error_var: 0.6816
+Epoch 32/50
+4074/4074 - 915s - loss: 570.5082 - cust_mean_squared_error_var: 0.6634 - val_loss: 540.1414 - val_cust_mean_squared_error_var: 0.6660
+Epoch 33/50
+4074/4074 - 982s - loss: 588.6894 - cust_mean_squared_error_var: 0.6462 - val_loss: 574.8311 - val_cust_mean_squared_error_var: 0.6986
+Epoch 34/50
+4074/4074 - 992s - loss: 554.2649 - cust_mean_squared_error_var: 0.6435 - val_loss: 481.4705 - val_cust_mean_squared_error_var: 0.6043
+Epoch 35/50
+4074/4074 - 988s - loss: 561.3106 - cust_mean_squared_error_var: 0.6477 - val_loss: 567.9378 - val_cust_mean_squared_error_var: 0.5813
+Epoch 36/50
+4074/4074 - 983s - loss: 594.1573 - cust_mean_squared_error_var: 0.6354 - val_loss: 562.6927 - val_cust_mean_squared_error_var: 0.6495
+Epoch 37/50
+4074/4074 - 978s - loss: 563.6308 - cust_mean_squared_error_var: 0.6378 - val_loss: 623.9022 - val_cust_mean_squared_error_var: 0.6617
+Epoch 38/50
+4074/4074 - 970s - loss: 588.9374 - cust_mean_squared_error_var: 0.6266 - val_loss: 646.8955 - val_cust_mean_squared_error_var: 0.6448
+Epoch 39/50
+4074/4074 - 976s - loss: 561.6818 - cust_mean_squared_error_var: 0.6317 - val_loss: 534.1354 - val_cust_mean_squared_error_var: 0.7117
+Epoch 40/50
+4074/4074 - 988s - loss: 578.8850 - cust_mean_squared_error_var: 0.6239 - val_loss: 471.3805 - val_cust_mean_squared_error_var: 0.6269
+Epoch 41/50
+4074/4074 - 1000s - loss: 579.7557 - cust_mean_squared_error_var: 0.6186 - val_loss: 599.7084 - val_cust_mean_squared_error_var: 0.6392
+Epoch 42/50
+4074/4074 - 1001s - loss: 584.5075 - cust_mean_squared_error_var: 0.6188 - val_loss: 612.2096 - val_cust_mean_squared_error_var: 0.6511
+Epoch 43/50
+4074/4074 - 996s - loss: 568.3432 - cust_mean_squared_error_var: 0.6136 - val_loss: 483.6444 - val_cust_mean_squared_error_var: 0.6599
+Epoch 44/50
+4074/4074 - 979s - loss: 578.3997 - cust_mean_squared_error_var: 0.6137 - val_loss: 542.4784 - val_cust_mean_squared_error_var: 0.6667
+Epoch 45/50
+4074/4074 - 970s - loss: 560.3256 - cust_mean_squared_error_var: 0.6088 - val_loss: 671.7798 - val_cust_mean_squared_error_var: 0.5844
+Epoch 46/50
+4074/4074 - 926s - loss: 578.0357 - cust_mean_squared_error_var: 0.6054 - val_loss: 604.5769 - val_cust_mean_squared_error_var: 0.5771
+Epoch 47/50
+4074/4074 - 929s - loss: 582.0879 - cust_mean_squared_error_var: 1.4128 - val_loss: 486.8239 - val_cust_mean_squared_error_var: 0.7193
+Epoch 48/50
+4074/4074 - 929s - loss: 580.5664 - cust_mean_squared_error_var: 0.6880 - val_loss: 739.1084 - val_cust_mean_squared_error_var: 0.7172
+Epoch 49/50
+4074/4074 - 923s - loss: 577.2473 - cust_mean_squared_error_var: 0.6398 - val_loss: 569.6552 - val_cust_mean_squared_error_var: 0.6304
+Epoch 50/50
+4074/4074 - 932s - loss: 561.4632 - cust_mean_squared_error_var: 0.6211 - val_loss: 529.1601 - val_cust_mean_squared_error_var: 0.6216

@@ -1,0 +1,314 @@
+WARNING: Logging before flag parsing goes to stderr.
+W0905 22:25:08.813231 139822037976896 deprecation.py:506]
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+W0905 22:25:09.657572 139822037976896 deprecation.py:323]
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+~/fluoro/code/jupyt/vox_fluoro/vox_fluoro_deeper_reg
+Model: "model"
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_vox (InputLayer)          [(None, 199, 164, 56 0                                            
+__________________________________________________________________________________________________
+conv3d (Conv3D)                 (None, 100, 82, 283, 39960       input_vox[0][0]                  
+__________________________________________________________________________________________________
+spatial_dropout3d (SpatialDropo (None, 100, 82, 283, 0           conv3d[0][0]                     
+__________________________________________________________________________________________________
+input_fluoro_1 (InputLayer)     [(None, 128, 128, 1) 0                                            
+__________________________________________________________________________________________________
+input_fluoro_2 (InputLayer)     [(None, 128, 128, 1) 0                                            
+__________________________________________________________________________________________________
+batch_normalization (BatchNorma (None, 100, 82, 283, 120         spatial_dropout3d[0][0]          
+__________________________________________________________________________________________________
+lambda (Lambda)                 (None, 128, 128, 1)  0           input_fluoro_1[0][0]             
+__________________________________________________________________________________________________
+lambda_1 (Lambda)               (None, 128, 128, 1)  0           input_fluoro_2[0][0]             
+__________________________________________________________________________________________________
+conv3d_1 (Conv3D)               (None, 50, 41, 95, 3 112530      batch_normalization[0][0]        
+__________________________________________________________________________________________________
+conv2d (Conv2D)                 (None, 64, 64, 30)   780         lambda[0][0]                     
+__________________________________________________________________________________________________
+conv2d_3 (Conv2D)               (None, 64, 64, 30)   780         lambda_1[0][0]                   
+__________________________________________________________________________________________________
+max_pooling3d (MaxPooling3D)    (None, 25, 20, 47, 3 0           conv3d_1[0][0]                   
+__________________________________________________________________________________________________
+spatial_dropout2d (SpatialDropo (None, 64, 64, 30)   0           conv2d[0][0]                     
+__________________________________________________________________________________________________
+spatial_dropout2d_3 (SpatialDro (None, 64, 64, 30)   0           conv2d_3[0][0]                   
+__________________________________________________________________________________________________
+batch_normalization_1 (BatchNor (None, 25, 20, 47, 3 120         max_pooling3d[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_6 (BatchNor (None, 64, 64, 30)   120         spatial_dropout2d[0][0]          
+__________________________________________________________________________________________________
+batch_normalization_10 (BatchNo (None, 64, 64, 30)   120         spatial_dropout2d_3[0][0]        
+__________________________________________________________________________________________________
+conv3d_2 (Conv3D)               (None, 13, 10, 24, 4 32440       batch_normalization_1[0][0]      
+__________________________________________________________________________________________________
+conv2d_1 (Conv2D)               (None, 32, 32, 40)   10840       batch_normalization_6[0][0]      
+__________________________________________________________________________________________________
+conv2d_4 (Conv2D)               (None, 32, 32, 40)   10840       batch_normalization_10[0][0]     
+__________________________________________________________________________________________________
+spatial_dropout3d_1 (SpatialDro (None, 13, 10, 24, 4 0           conv3d_2[0][0]                   
+__________________________________________________________________________________________________
+max_pooling2d (MaxPooling2D)    (None, 16, 16, 40)   0           conv2d_1[0][0]                   
+__________________________________________________________________________________________________
+max_pooling2d_2 (MaxPooling2D)  (None, 16, 16, 40)   0           conv2d_4[0][0]                   
+__________________________________________________________________________________________________
+batch_normalization_2 (BatchNor (None, 13, 10, 24, 4 160         spatial_dropout3d_1[0][0]        
+__________________________________________________________________________________________________
+batch_normalization_7 (BatchNor (None, 16, 16, 40)   160         max_pooling2d[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_11 (BatchNo (None, 16, 16, 40)   160         max_pooling2d_2[0][0]            
+__________________________________________________________________________________________________
+conv3d_3 (Conv3D)               (None, 7, 5, 12, 50) 54050       batch_normalization_2[0][0]      
+__________________________________________________________________________________________________
+conv2d_2 (Conv2D)               (None, 8, 8, 50)     18050       batch_normalization_7[0][0]      
+__________________________________________________________________________________________________
+conv2d_5 (Conv2D)               (None, 8, 8, 50)     18050       batch_normalization_11[0][0]     
+__________________________________________________________________________________________________
+conv3d_4 (Conv3D)               (None, 4, 3, 6, 50)  20050       conv3d_3[0][0]                   
+__________________________________________________________________________________________________
+spatial_dropout2d_1 (SpatialDro (None, 8, 8, 50)     0           conv2d_2[0][0]                   
+__________________________________________________________________________________________________
+spatial_dropout2d_4 (SpatialDro (None, 8, 8, 50)     0           conv2d_5[0][0]                   
+__________________________________________________________________________________________________
+spatial_dropout3d_2 (SpatialDro (None, 4, 3, 6, 50)  0           conv3d_4[0][0]                   
+__________________________________________________________________________________________________
+batch_normalization_8 (BatchNor (None, 8, 8, 50)     200         spatial_dropout2d_1[0][0]        
+__________________________________________________________________________________________________
+batch_normalization_12 (BatchNo (None, 8, 8, 50)     200         spatial_dropout2d_4[0][0]        
+__________________________________________________________________________________________________
+batch_normalization_4 (BatchNor (None, 4, 3, 6, 50)  200         spatial_dropout3d_2[0][0]        
+__________________________________________________________________________________________________
+separable_conv2d (SeparableConv (None, 4, 4, 60)     3510        batch_normalization_8[0][0]      
+__________________________________________________________________________________________________
+separable_conv2d_3 (SeparableCo (None, 4, 4, 60)     3510        batch_normalization_12[0][0]     
+__________________________________________________________________________________________________
+conv3d_5 (Conv3D)               (None, 2, 2, 3, 50)  20050       batch_normalization_4[0][0]      
+__________________________________________________________________________________________________
+max_pooling2d_1 (MaxPooling2D)  (None, 2, 2, 60)     0           separable_conv2d[0][0]           2019-09-05 22:43:34.562365: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-09-05 22:43:35.754956: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2599825000 Hz
+2019-09-05 22:43:35.767767: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x565022f79250 executing computations on platform Host. Devices:
+2019-09-05 22:43:35.767861: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2019-09-05 22:43:36.459565: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2019-09-05 22:43:38.254015: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:02:00.0
+2019-09-05 22:43:38.255297: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 1 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:82:00.0
+2019-09-05 22:43:38.261833: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.9.0
+2019-09-05 22:43:38.322802: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.9.0
+2019-09-05 22:43:38.444177: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.9.0
+2019-09-05 22:43:38.553031: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.9.0
+2019-09-05 22:43:38.631196: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.9.0
+2019-09-05 22:43:38.791537: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.9.0
+2019-09-05 22:43:39.050640: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2019-09-05 22:43:39.145084: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0, 1
+2019-09-05 22:43:39.145171: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.9.0
+2019-09-05 22:43:39.149512: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-05 22:43:39.149538: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 1 
+2019-09-05 22:43:39.149566: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N N 
+2019-09-05 22:43:39.149583: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 1:   N N 
+2019-09-05 22:43:39.159509: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15188 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:02:00.0, compute capability: 6.0)
+2019-09-05 22:43:39.162430: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 43 MB memory) -> physical GPU (device: 1, name: Tesla P100-PCIE-16GB, pci bus id: 0000:82:00.0, compute capability: 6.0)
+2019-09-05 22:43:39.165477: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x56502418a690 executing computations on platform CUDA. Devices:
+2019-09-05 22:43:39.165513: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla P100-PCIE-16GB, Compute Capability 6.0
+2019-09-05 22:43:39.165531: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (1): Tesla P100-PCIE-16GB, Compute Capability 6.0
+2019-09-05 22:43:56.230046: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.9.0
+2019-09-05 22:43:57.140137: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+
+__________________________________________________________________________________________________
+max_pooling2d_3 (MaxPooling2D)  (None, 2, 2, 60)     0           separable_conv2d_3[0][0]         
+__________________________________________________________________________________________________
+batch_normalization_5 (BatchNor (None, 2, 2, 3, 50)  200         conv3d_5[0][0]                   
+__________________________________________________________________________________________________
+batch_normalization_9 (BatchNor (None, 2, 2, 60)     240         max_pooling2d_1[0][0]            
+__________________________________________________________________________________________________
+batch_normalization_13 (BatchNo (None, 2, 2, 60)     240         max_pooling2d_3[0][0]            
+__________________________________________________________________________________________________
+conv3d_6 (Conv3D)               (None, 2, 2, 3, 50)  20050       batch_normalization_5[0][0]      
+__________________________________________________________________________________________________
+separable_conv2d_1 (SeparableCo (None, 2, 2, 60)     4200        batch_normalization_9[0][0]      
+__________________________________________________________________________________________________
+separable_conv2d_4 (SeparableCo (None, 2, 2, 60)     4200        batch_normalization_13[0][0]     
+__________________________________________________________________________________________________
+conv3d_7 (Conv3D)               (None, 2, 2, 3, 30)  1530        conv3d_6[0][0]                   
+__________________________________________________________________________________________________
+spatial_dropout2d_2 (SpatialDro (None, 2, 2, 60)     0           separable_conv2d_1[0][0]         
+__________________________________________________________________________________________________
+spatial_dropout2d_5 (SpatialDro (None, 2, 2, 60)     0           separable_conv2d_4[0][0]         
+__________________________________________________________________________________________________
+flatten (Flatten)               (None, 360)          0           conv3d_7[0][0]                   
+__________________________________________________________________________________________________
+separable_conv2d_2 (SeparableCo (None, 2, 2, 30)     2370        spatial_dropout2d_2[0][0]        
+__________________________________________________________________________________________________
+separable_conv2d_5 (SeparableCo (None, 2, 2, 30)     2370        spatial_dropout2d_5[0][0]        
+__________________________________________________________________________________________________
+dense (Dense)                   (None, 300)          108300      flatten[0][0]                    
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (None, 120)          0           separable_conv2d_2[0][0]         
+__________________________________________________________________________________________________
+flatten_2 (Flatten)             (None, 120)          0           separable_conv2d_5[0][0]         
+__________________________________________________________________________________________________
+input_cali (InputLayer)         [(None, 6)]          0                                            
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 250)          75250       dense[0][0]                      
+__________________________________________________________________________________________________
+dense_4 (Dense)                 (None, 120)          14520       flatten_1[0][0]                  
+__________________________________________________________________________________________________
+dense_7 (Dense)                 (None, 120)          14520       flatten_2[0][0]                  
+__________________________________________________________________________________________________
+dense_10 (Dense)                (None, 20)           140         input_cali[0][0]                 
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, 250)          62750       dense_1[0][0]                    
+__________________________________________________________________________________________________
+dense_5 (Dense)                 (None, 120)          14520       dense_4[0][0]                    
+__________________________________________________________________________________________________
+dense_8 (Dense)                 (None, 120)          14520       dense_7[0][0]                    
+__________________________________________________________________________________________________
+dense_11 (Dense)                (None, 20)           420         dense_10[0][0]                   
+__________________________________________________________________________________________________
+dense_3 (Dense)                 (None, 200)          50200       dense_2[0][0]                    
+__________________________________________________________________________________________________
+dense_6 (Dense)                 (None, 80)           9680        dense_5[0][0]                    
+__________________________________________________________________________________________________
+dense_9 (Dense)                 (None, 80)           9680        dense_8[0][0]                    
+__________________________________________________________________________________________________
+dense_12 (Dense)                (None, 20)           420         dense_11[0][0]                   
+__________________________________________________________________________________________________
+concatenate (Concatenate)       (None, 380)          0           dense_3[0][0]                    
+                                                                 dense_6[0][0]                    
+                                                                 dense_9[0][0]                    
+                                                                 dense_12[0][0]                   
+__________________________________________________________________________________________________
+batch_normalization_14 (BatchNo (None, 380)          1520        concatenate[0][0]                
+__________________________________________________________________________________________________
+dense_13 (Dense)                (None, 250)          95250       batch_normalization_14[0][0]     
+__________________________________________________________________________________________________
+dropout (Dropout)               (None, 250)          0           dense_13[0][0]                   
+__________________________________________________________________________________________________
+batch_normalization_15 (BatchNo (None, 250)          1000        dropout[0][0]                    
+__________________________________________________________________________________________________
+dense_14 (Dense)                (None, 150)          37650       batch_normalization_15[0][0]     
+__________________________________________________________________________________________________
+dense_15 (Dense)                (None, 100)          15100       dense_14[0][0]                   
+__________________________________________________________________________________________________
+dropout_1 (Dropout)             (None, 100)          0           dense_15[0][0]                   
+__________________________________________________________________________________________________
+dense_16 (Dense)                (None, 20)           2020        dropout_1[0][0]                  
+__________________________________________________________________________________________________
+main_output (Dense)             (None, 6)            126         dense_16[0][0]                   
+==================================================================================================
+Total params: 909,986
+Trainable params: 907,606
+Non-trainable params: 2,380
+__________________________________________________________________________________________________
+
+
+completely loaded...
+
+
+Train on 4074 samples, validate on 1018 samples
+Epoch 1/50
+4074/4074 - 1400s - loss: 135.2525 - cust_mean_squared_error_var: 3.2130 - val_loss: 15.7772 - val_cust_mean_squared_error_var: 1.2171
+Epoch 2/50
+4074/4074 - 1400s - loss: 12.1711 - cust_mean_squared_error_var: 0.9624 - val_loss: 15.8819 - val_cust_mean_squared_error_var: 0.7728
+Epoch 3/50
+4074/4074 - 1383s - loss: 77.7906 - cust_mean_squared_error_var: 0.8923 - val_loss: 18.2022 - val_cust_mean_squared_error_var: 0.9337
+Epoch 4/50
+4074/4074 - 1371s - loss: 24.0861 - cust_mean_squared_error_var: 0.8528 - val_loss: 11.1406 - val_cust_mean_squared_error_var: 0.7885
+Epoch 5/50
+4074/4074 - 1372s - loss: 14.5374 - cust_mean_squared_error_var: 0.8245 - val_loss: 13.2628 - val_cust_mean_squared_error_var: 0.8020
+Epoch 6/50
+4074/4074 - 1369s - loss: 10.9343 - cust_mean_squared_error_var: 0.8162 - val_loss: 7.7865 - val_cust_mean_squared_error_var: 0.7995
+Epoch 7/50
+4074/4074 - 1370s - loss: 9.8217 - cust_mean_squared_error_var: 0.7831 - val_loss: 9.1223 - val_cust_mean_squared_error_var: 0.7175
+Epoch 8/50
+4074/4074 - 1372s - loss: 10.9219 - cust_mean_squared_error_var: 0.7651 - val_loss: 11.0912 - val_cust_mean_squared_error_var: 0.7790
+Epoch 9/50
+4074/4074 - 1381s - loss: 11.8787 - cust_mean_squared_error_var: 0.7592 - val_loss: 12.2714 - val_cust_mean_squared_error_var: 0.6161
+Epoch 10/50
+4074/4074 - 1378s - loss: 12.4991 - cust_mean_squared_error_var: 0.7238 - val_loss: 12.1615 - val_cust_mean_squared_error_var: 0.7868
+Epoch 11/50
+4074/4074 - 1370s - loss: 12.1063 - cust_mean_squared_error_var: 0.7090 - val_loss: 12.3579 - val_cust_mean_squared_error_var: 0.7061
+Epoch 12/50
+4074/4074 - 1367s - loss: 12.8274 - cust_mean_squared_error_var: 0.7011 - val_loss: 12.0384 - val_cust_mean_squared_error_var: 0.6253
+Epoch 13/50
+4074/4074 - 1376s - loss: 12.4918 - cust_mean_squared_error_var: 0.6752 - val_loss: 13.3878 - val_cust_mean_squared_error_var: 0.6567
+Epoch 14/50
+4074/4074 - 1371s - loss: 12.7778 - cust_mean_squared_error_var: 0.6686 - val_loss: 12.7106 - val_cust_mean_squared_error_var: 0.5766
+Epoch 15/50
+4074/4074 - 1377s - loss: 12.5192 - cust_mean_squared_error_var: 0.6674 - val_loss: 12.4062 - val_cust_mean_squared_error_var: 0.7071
+Epoch 16/50
+4074/4074 - 1374s - loss: 12.6736 - cust_mean_squared_error_var: 0.6534 - val_loss: 11.0120 - val_cust_mean_squared_error_var: 1.0370
+Epoch 17/50
+4074/4074 - 1378s - loss: 12.8213 - cust_mean_squared_error_var: 0.6546 - val_loss: 11.8224 - val_cust_mean_squared_error_var: 0.6523
+Epoch 18/50
+4074/4074 - 1379s - loss: 12.5748 - cust_mean_squared_error_var: 0.6442 - val_loss: 12.3389 - val_cust_mean_squared_error_var: 0.6228
+Epoch 19/50
+4074/4074 - 1330s - loss: 11.7558 - cust_mean_squared_error_var: 0.6281 - val_loss: 9.3093 - val_cust_mean_squared_error_var: 0.5409
+Epoch 20/50
+4074/4074 - 1222s - loss: 12.4314 - cust_mean_squared_error_var: 0.6219 - val_loss: 12.0208 - val_cust_mean_squared_error_var: 0.7406
+Epoch 21/50
+4074/4074 - 1168s - loss: 12.4974 - cust_mean_squared_error_var: 0.6100 - val_loss: 15.0195 - val_cust_mean_squared_error_var: 0.5755
+Epoch 22/50
+4074/4074 - 1159s - loss: 12.7064 - cust_mean_squared_error_var: 0.5998 - val_loss: 10.9519 - val_cust_mean_squared_error_var: 0.6330
+Epoch 23/50
+4074/4074 - 1155s - loss: 12.7096 - cust_mean_squared_error_var: 0.6018 - val_loss: 11.6860 - val_cust_mean_squared_error_var: 0.6524
+Epoch 24/50
+4074/4074 - 1150s - loss: 12.1967 - cust_mean_squared_error_var: 0.5774 - val_loss: 14.7229 - val_cust_mean_squared_error_var: 0.6111
+Epoch 25/50
+4074/4074 - 1153s - loss: 12.8787 - cust_mean_squared_error_var: 0.5888 - val_loss: 10.1576 - val_cust_mean_squared_error_var: 0.4948
+Epoch 26/50
+4074/4074 - 1150s - loss: 12.7684 - cust_mean_squared_error_var: 0.5865 - val_loss: 12.9325 - val_cust_mean_squared_error_var: 0.5349
+Epoch 27/50
+4074/4074 - 1150s - loss: 12.6791 - cust_mean_squared_error_var: 0.5780 - val_loss: 12.7678 - val_cust_mean_squared_error_var: 0.5967
+Epoch 28/50
+4074/4074 - 1152s - loss: 12.4597 - cust_mean_squared_error_var: 0.5508 - val_loss: 13.9838 - val_cust_mean_squared_error_var: 0.6103
+Epoch 29/50
+4074/4074 - 1151s - loss: 12.5203 - cust_mean_squared_error_var: 0.5512 - val_loss: 13.4502 - val_cust_mean_squared_error_var: 0.4733
+Epoch 30/50
+4074/4074 - 1150s - loss: 12.4592 - cust_mean_squared_error_var: 0.5338 - val_loss: 11.4605 - val_cust_mean_squared_error_var: 0.5408
+Epoch 31/50
+4074/4074 - 1151s - loss: 12.6798 - cust_mean_squared_error_var: 0.5672 - val_loss: 10.2665 - val_cust_mean_squared_error_var: 0.5605
+Epoch 32/50
+4074/4074 - 1151s - loss: 12.2574 - cust_mean_squared_error_var: 0.5395 - val_loss: 12.5269 - val_cust_mean_squared_error_var: 0.5222
+Epoch 33/50
+4074/4074 - 1156s - loss: 12.6118 - cust_mean_squared_error_var: 0.5370 - val_loss: 13.6355 - val_cust_mean_squared_error_var: 0.5654
+Epoch 34/50
+4074/4074 - 1151s - loss: 12.1169 - cust_mean_squared_error_var: 0.5250 - val_loss: 14.7229 - val_cust_mean_squared_error_var: 0.4437
+Epoch 35/50
+4074/4074 - 1146s - loss: 12.1171 - cust_mean_squared_error_var: 0.5173 - val_loss: 12.9592 - val_cust_mean_squared_error_var: 0.6953
+Epoch 36/50
+4074/4074 - 1137s - loss: 12.6072 - cust_mean_squared_error_var: 0.5129 - val_loss: 11.6338 - val_cust_mean_squared_error_var: 0.7342
+Epoch 37/50
+4074/4074 - 1141s - loss: 12.2204 - cust_mean_squared_error_var: 0.5193 - val_loss: 10.5624 - val_cust_mean_squared_error_var: 0.5079
+Epoch 38/50
+4074/4074 - 1554s - loss: 12.3309 - cust_mean_squared_error_var: 0.5061 - val_loss: 13.6675 - val_cust_mean_squared_error_var: 0.7309
+Epoch 39/50
+4074/4074 - 1938s - loss: 12.2557 - cust_mean_squared_error_var: 0.5003 - val_loss: 13.6090 - val_cust_mean_squared_error_var: 0.6661
+Epoch 40/50
+4074/4074 - 1515s - loss: 12.5540 - cust_mean_squared_error_var: 0.5115 - val_loss: 10.1422 - val_cust_mean_squared_error_var: 0.4203
+Epoch 41/50
+4074/4074 - 1473s - loss: 12.3608 - cust_mean_squared_error_var: 0.4854 - val_loss: 12.6197 - val_cust_mean_squared_error_var: 0.4528
+Epoch 42/50
+4074/4074 - 1452s - loss: 12.2756 - cust_mean_squared_error_var: 0.4892 - val_loss: 16.0503 - val_cust_mean_squared_error_var: 0.6104
+Epoch 43/50
+4074/4074 - 1409s - loss: 12.6289 - cust_mean_squared_error_var: 0.4874 - val_loss: 12.0603 - val_cust_mean_squared_error_var: 0.3967
+Epoch 44/50
+4074/4074 - 1409s - loss: 12.3508 - cust_mean_squared_error_var: 0.4737 - val_loss: 12.4136 - val_cust_mean_squared_error_var: 0.4988
+Epoch 45/50
+4074/4074 - 1408s - loss: 11.9521 - cust_mean_squared_error_var: 0.4766 - val_loss: 9.4355 - val_cust_mean_squared_error_var: 0.3961
+Epoch 46/50
+4074/4074 - 1407s - loss: 12.3983 - cust_mean_squared_error_var: 0.4674 - val_loss: 11.6741 - val_cust_mean_squared_error_var: 0.4244
+Epoch 47/50
+4074/4074 - 1410s - loss: 12.4317 - cust_mean_squared_error_var: 0.4737 - val_loss: 12.5556 - val_cust_mean_squared_error_var: 0.4128
+Epoch 48/50
+4074/4074 - 1402s - loss: 12.4333 - cust_mean_squared_error_var: 0.4664 - val_loss: 11.6837 - val_cust_mean_squared_error_var: 0.5903
+Epoch 49/50
+4074/4074 - 1408s - loss: 12.2839 - cust_mean_squared_error_var: 0.4706 - val_loss: 11.5597 - val_cust_mean_squared_error_var: 0.3957
+Epoch 50/50
+4074/4074 - 1400s - loss: 12.4931 - cust_mean_squared_error_var: 0.4677 - val_loss: 10.5980 - val_cust_mean_squared_error_var: 0.4030

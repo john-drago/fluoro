@@ -1,0 +1,145 @@
+WARNING: Logging before flag parsing goes to stderr.
+W0903 22:29:44.353457 140248060061504 deprecation.py:506]
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+W0903 22:29:44.615161 140248060061504 deprecation.py:323]
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+2019-09-03 22:39:59.309324: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-09-03 22:39:59.561673: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2599825000 Hz
+2019-09-03 22:39:59.759191: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x559d4bcaca50 executing computations on platform Host. Devices:
+2019-09-03 22:39:59.759265: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2019-09-03 22:39:59.761399: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2019-09-03 22:40:02.100964: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:02:00.0
+2019-09-03 22:40:02.103262: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 1 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:82:00.0
+2019-09-03 22:40:02.104433: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.9.0
+2019-09-03 22:40:02.106896: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.9.0
+2019-09-03 22:40:02.109357: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.9.0
+2019-09-03 22:40:02.109816: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.9.0
+2019-09-03 22:40:02.112519: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.9.0
+2019-09-03 22:40:02.114805: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.9.0
+2019-09-03 22:40:02.121163: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2019-09-03 22:40:02.177558: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0, 1
+2019-09-03 22:40:02.177651: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.9.0
+2019-09-03 22:40:02.183615: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-03 22:40:02.183669: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 1 
+2019-09-03 22:40:02.183698: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N N 
+2019-09-03 22:40:02.183718: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 1:   N N 
+2019-09-03 22:40:02.196109: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15188 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:02:00.0, compute capability: 6.0)
+2019-09-03 22:40:02.202133: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15188 MB memory) -> physical GPU (device: 1, name: Tesla P100-PCIE-16GB, pci bus id: 0000:82:00.0, compute capability: 6.0)
+2019-09-03 22:40:02.205491: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x559d5c674a20 executing computations on platform CUDA. Devices:
+2019-09-03 22:40:02.205521: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla P100-PCIE-16GB, Compute Capability 6.0
+2019-09-03 22:40:02.205540: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (1): Tesla P100-PCIE-16GB, Compute Capability 6.0
+2019-09-03 22:40:05.239535: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.9.0
+2019-09-03 22:40:05.770462: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+~/fluoro/code/jupyt/vox_fluoro/vox_fluoro_img_no_l1_l2_loss
+
+
+completely loaded...
+
+
+Train on 4074 samples, validate on 1018 samples
+Epoch 1/50
+4074/4074 - 1036s - loss: 2.4786 - cust_mean_squared_error_std: 2.4783 - val_loss: 0.8558 - val_cust_mean_squared_error_std: 0.8557
+Epoch 2/50
+4074/4074 - 788s - loss: 0.8455 - cust_mean_squared_error_std: 0.8455 - val_loss: 0.7144 - val_cust_mean_squared_error_std: 0.7146
+Epoch 3/50
+4074/4074 - 682s - loss: 0.6652 - cust_mean_squared_error_std: 0.6654 - val_loss: 0.5396 - val_cust_mean_squared_error_std: 0.5394
+Epoch 4/50
+4074/4074 - 1005s - loss: 0.5716 - cust_mean_squared_error_std: 0.5719 - val_loss: 0.5529 - val_cust_mean_squared_error_std: 0.5540
+Epoch 5/50
+4074/4074 - 816s - loss: 0.5283 - cust_mean_squared_error_std: 0.5282 - val_loss: 0.4369 - val_cust_mean_squared_error_std: 0.4368
+Epoch 6/50
+4074/4074 - 672s - loss: 0.4861 - cust_mean_squared_error_std: 0.4861 - val_loss: 0.4479 - val_cust_mean_squared_error_std: 0.4476
+Epoch 7/50
+4074/4074 - 672s - loss: 0.4634 - cust_mean_squared_error_std: 0.4635 - val_loss: 0.4139 - val_cust_mean_squared_error_std: 0.4137
+Epoch 8/50
+4074/4074 - 670s - loss: 0.4342 - cust_mean_squared_error_std: 0.4343 - val_loss: 0.3983 - val_cust_mean_squared_error_std: 0.3978
+Epoch 9/50
+4074/4074 - 669s - loss: 85.7914 - cust_mean_squared_error_std: 85.7723 - val_loss: 4.6346 - val_cust_mean_squared_error_std: 4.6334
+Epoch 10/50
+4074/4074 - 667s - loss: 16.3885 - cust_mean_squared_error_std: 16.3854 - val_loss: 3.2487 - val_cust_mean_squared_error_std: 3.2487
+Epoch 11/50
+4074/4074 - 667s - loss: 4.6568 - cust_mean_squared_error_std: 4.6561 - val_loss: 2.2869 - val_cust_mean_squared_error_std: 2.2855
+Epoch 12/50
+4074/4074 - 668s - loss: 1.8102 - cust_mean_squared_error_std: 1.8100 - val_loss: 1.1602 - val_cust_mean_squared_error_std: 1.1603
+Epoch 13/50
+4074/4074 - 667s - loss: 1.1804 - cust_mean_squared_error_std: 1.1804 - val_loss: 1.0754 - val_cust_mean_squared_error_std: 1.0753
+Epoch 14/50
+4074/4074 - 666s - loss: 1.0798 - cust_mean_squared_error_std: 1.0798 - val_loss: 0.9925 - val_cust_mean_squared_error_std: 0.9921
+Epoch 15/50
+4074/4074 - 665s - loss: 0.9821 - cust_mean_squared_error_std: 0.9821 - val_loss: 0.9612 - val_cust_mean_squared_error_std: 0.9609
+Epoch 16/50
+4074/4074 - 668s - loss: 0.9630 - cust_mean_squared_error_std: 0.9630 - val_loss: 1.0801 - val_cust_mean_squared_error_std: 1.0797
+Epoch 17/50
+4074/4074 - 667s - loss: 0.8888 - cust_mean_squared_error_std: 0.8887 - val_loss: 0.9222 - val_cust_mean_squared_error_std: 0.9221
+Epoch 18/50
+4074/4074 - 668s - loss: 0.8574 - cust_mean_squared_error_std: 0.8574 - val_loss: 1.0392 - val_cust_mean_squared_error_std: 1.0394
+Epoch 19/50
+4074/4074 - 666s - loss: 0.8359 - cust_mean_squared_error_std: 0.8358 - val_loss: 1.1579 - val_cust_mean_squared_error_std: 1.1575
+Epoch 20/50
+4074/4074 - 666s - loss: 0.8073 - cust_mean_squared_error_std: 0.8072 - val_loss: 1.2381 - val_cust_mean_squared_error_std: 1.2373
+Epoch 21/50
+4074/4074 - 667s - loss: 0.7868 - cust_mean_squared_error_std: 0.7867 - val_loss: 1.0257 - val_cust_mean_squared_error_std: 1.0255
+Epoch 22/50
+4074/4074 - 666s - loss: 0.7761 - cust_mean_squared_error_std: 0.7761 - val_loss: 1.2855 - val_cust_mean_squared_error_std: 1.2853
+Epoch 23/50
+4074/4074 - 667s - loss: 0.7667 - cust_mean_squared_error_std: 0.7667 - val_loss: 0.8610 - val_cust_mean_squared_error_std: 0.8611
+Epoch 24/50
+4074/4074 - 667s - loss: 0.7523 - cust_mean_squared_error_std: 0.7523 - val_loss: 0.9733 - val_cust_mean_squared_error_std: 0.9731
+Epoch 25/50
+4074/4074 - 667s - loss: 0.7394 - cust_mean_squared_error_std: 0.7394 - val_loss: 0.8933 - val_cust_mean_squared_error_std: 0.8928
+Epoch 26/50
+4074/4074 - 667s - loss: 0.7343 - cust_mean_squared_error_std: 0.7343 - val_loss: 0.8040 - val_cust_mean_squared_error_std: 0.8042
+Epoch 27/50
+4074/4074 - 668s - loss: 0.7249 - cust_mean_squared_error_std: 0.7248 - val_loss: 0.8075 - val_cust_mean_squared_error_std: 0.8069
+Epoch 28/50
+4074/4074 - 666s - loss: 2.3024 - cust_mean_squared_error_std: 2.3020 - val_loss: 0.9050 - val_cust_mean_squared_error_std: 0.9056
+Epoch 29/50
+4074/4074 - 666s - loss: 1.2066 - cust_mean_squared_error_std: 1.2065 - val_loss: 0.8250 - val_cust_mean_squared_error_std: 0.8246
+Epoch 30/50
+4074/4074 - 667s - loss: 0.7862 - cust_mean_squared_error_std: 0.7862 - val_loss: 0.6682 - val_cust_mean_squared_error_std: 0.6686
+Epoch 31/50
+4074/4074 - 665s - loss: 0.7353 - cust_mean_squared_error_std: 0.7353 - val_loss: 0.6540 - val_cust_mean_squared_error_std: 0.6545
+Epoch 32/50
+4074/4074 - 665s - loss: 0.7019 - cust_mean_squared_error_std: 0.7019 - val_loss: 0.6801 - val_cust_mean_squared_error_std: 0.6806
+Epoch 33/50
+4074/4074 - 666s - loss: 0.6948 - cust_mean_squared_error_std: 0.6948 - val_loss: 0.6694 - val_cust_mean_squared_error_std: 0.6701
+Epoch 34/50
+4074/4074 - 662s - loss: 0.6826 - cust_mean_squared_error_std: 0.6827 - val_loss: 0.7048 - val_cust_mean_squared_error_std: 0.7053
+Epoch 35/50
+4074/4074 - 672s - loss: 0.6852 - cust_mean_squared_error_std: 0.6851 - val_loss: 0.6774 - val_cust_mean_squared_error_std: 0.6772
+Epoch 36/50
+4074/4074 - 688s - loss: 0.6692 - cust_mean_squared_error_std: 0.6692 - val_loss: 0.6626 - val_cust_mean_squared_error_std: 0.6629
+Epoch 37/50
+4074/4074 - 710s - loss: 0.6653 - cust_mean_squared_error_std: 0.6654 - val_loss: 0.6639 - val_cust_mean_squared_error_std: 0.6637
+Epoch 38/50
+4074/4074 - 719s - loss: 0.6385 - cust_mean_squared_error_std: 0.6385 - val_loss: 0.6104 - val_cust_mean_squared_error_std: 0.6101
+Epoch 39/50
+4074/4074 - 726s - loss: 0.6280 - cust_mean_squared_error_std: 0.6280 - val_loss: 0.6756 - val_cust_mean_squared_error_std: 0.6766
+Epoch 40/50
+4074/4074 - 747s - loss: 94.2533 - cust_mean_squared_error_std: 94.2305 - val_loss: 0.9942 - val_cust_mean_squared_error_std: 0.9938
+Epoch 41/50
+4074/4074 - 738s - loss: 0.7575 - cust_mean_squared_error_std: 0.7574 - val_loss: 0.7720 - val_cust_mean_squared_error_std: 0.7721
+Epoch 42/50
+4074/4074 - 740s - loss: 0.6040 - cust_mean_squared_error_std: 0.6039 - val_loss: 0.6696 - val_cust_mean_squared_error_std: 0.6699
+Epoch 43/50
+4074/4074 - 764s - loss: 0.5878 - cust_mean_squared_error_std: 0.5878 - val_loss: 0.6165 - val_cust_mean_squared_error_std: 0.6167
+Epoch 44/50
+4074/4074 - 767s - loss: 0.5898 - cust_mean_squared_error_std: 0.5898 - val_loss: 0.7610 - val_cust_mean_squared_error_std: 0.7613
+Epoch 45/50
+4074/4074 - 781s - loss: 0.5984 - cust_mean_squared_error_std: 0.5984 - val_loss: 0.5916 - val_cust_mean_squared_error_std: 0.5918
+Epoch 46/50
+4074/4074 - 755s - loss: 0.5832 - cust_mean_squared_error_std: 0.5832 - val_loss: 0.6328 - val_cust_mean_squared_error_std: 0.6328
+Epoch 47/50
+4074/4074 - 791s - loss: 0.5719 - cust_mean_squared_error_std: 0.5719 - val_loss: 0.6656 - val_cust_mean_squared_error_std: 0.6657
+Epoch 48/50
+4074/4074 - 794s - loss: 0.5738 - cust_mean_squared_error_std: 0.5738 - val_loss: 0.6512 - val_cust_mean_squared_error_std: 0.6510
+Epoch 49/50
+4074/4074 - 781s - loss: 0.5905 - cust_mean_squared_error_std: 0.5904 - val_loss: 0.7634 - val_cust_mean_squared_error_std: 0.7627
+Epoch 50/50
+4074/4074 - 785s - loss: 0.5933 - cust_mean_squared_error_std: 0.5933 - val_loss: 0.5674 - val_cust_mean_squared_error_std: 0.5676
