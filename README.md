@@ -43,36 +43,8 @@ It is important to note that examples of the original data directory structure h
 ## Brief Description of Model Architecture:
 
 The overarching goal of this project was to generate a vector detailing the global position of a specific bone. This parameter vector is of the form:
-$$
-\mathbf{\hat{w}} = \begin{bmatrix} \hat{x}&\hat{y}&\hat{z}&\hat{\theta}&\hat{\phi}&\hat{\psi} \end{bmatrix} ,
-$$
-where $\hat{x}$, $\hat{y}$, and $\hat{z}$ represent translations from a global origin and $\hat{\theta}$, $\hat{\phi}$ , and $\hat{\psi}$ represent angles of a rotation matrix, $\mathbf{R_\text{rotation}}$, for $\mathbb{R}^3$ Euclidean space.
-$$
-\mathbf{R_\text{rotation}} = \mathbf{R_z} \mathbf{R_y} \mathbf{R_x} \hspace{0.2em} \text{, where:}
-$$
 
-$$
-\mathbf{R_{x}}=
-  \begin{bmatrix}
-    1 & 0 & 0 \\
-    0 & \cos(\theta) & -\sin(\theta) \\
-    0 & \sin(\theta) & \cos(\theta) \\
-  \end{bmatrix} \\
-  
-\mathbf{R_{y}}=
-  \begin{bmatrix}
-    \cos(\phi) & 0 & \sin(\phi) \\
-    0 & 1 & 0 \\
-    -sin(\phi) & 0 & \cos(\phi) \\
-  \end{bmatrix} \\
-  
-\mathbf{R_{z}}=
-  \begin{bmatrix}
-    \cos(\psi) & -\sin(\psi) & 0 \\
-    \sin(\psi) &  \cos(\psi) & 0 \\
-    0 & 0 & 1\\
-  \end{bmatrix}
-$$
+<img src="./background/images/parameter_vector_latex.png" alt="fluoro-artifact-example" width=40% />
 
 As can be seen from the description of the parameter vector, this deep learning method is attempting to predict the rigid body transformation of a given bone from the global origin. Rigid body assumptions are what are currently used for kinematic analysis.
 
