@@ -44,7 +44,7 @@ It is important to note that examples of the original data directory structure h
 
 The overarching goal of this project was to generate a vector detailing the global position of a specific bone. This parameter vector is of the form:
 
-<img src="./background/images/parameter_vector_latex.png" alt="fluoro-artifact-example" width=40% />
+<img src="./background/images/parameter_vector_latex.png" alt="fluoro-artifact-example" width=70% />
 
 As can be seen from the description of the parameter vector, this deep learning method is attempting to predict the rigid body transformation of a given bone from the global origin. Rigid body assumptions are what are currently used for kinematic analysis.
 
