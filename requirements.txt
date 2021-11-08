@@ -105,7 +105,7 @@ pyglet==1.4.1
 ##### Extra packages (optional)
 
 # Nice utility to diff Jupyter Notebooks.
-nbdime==1.0.5
+nbdime==1.1.1
 
 
 jupyter-tensorboard==0.1.10
