@@ -70,7 +70,7 @@ talos==0.6.3
 hyperopt==0.1.2
 
 # save jupyter notebooks
-nbconvert==5.5.0
+nbconvert==6.5.1
 
 
 ##### Image manipulation
