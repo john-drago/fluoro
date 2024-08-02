@@ -54,7 +54,7 @@ scikit-learn==0.21.2
 # tensorflow==1.14.0
 # tensorflow-graphics==1.0.0
 # tensorflow-gpu==1.14.0
-keras==2.2.4
+keras==2.13.1
 
 ### Keras dependencies
 graphviz==0.11.1
